@@ -1,25 +1,47 @@
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.root {
+  position: relative;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container > div {
+  flex: 0.33;
+  opacity: 0.2;
+}
+
+.logo-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.preact:hover {
-  filter: drop-shadow(0 0 2em #673ab8aa);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
-.card {
-  padding: 2em;
+.gradient-bg {
+  background: linear-gradient(-45deg, #eb4076, #7b44f6);
+  background-size: 200% 200%;
+  animation: gradient-bg 15s ease infinite;
 }
 
-.read-the-docs {
-  color: #888;
+@keyframes gradient-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

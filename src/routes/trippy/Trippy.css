@@ -1,0 +1,89 @@
+.drop-in {
+  position: relative;
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: drop-in 0.5s ease-in forwards;
+  animation-delay: 0.4s;
+}
+
+.drop-in.two {
+  animation-delay: 0.9s;
+}
+
+.drop-in.three {
+  animation-delay: 1.4s;
+}
+
+@keyframes drop-in {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.grow-in {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: grow-in 0.5s ease-in forwards;
+}
+
+@keyframes grow-in {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.top {
+  background-color: black;
+  position: relative;
+  color: white;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.top canvas {
+  position: absolute;
+  top: 0;
+}
+
+.top article {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.top small {
+  font-size: 22px;
+  text-shadow: -1px -1px black;
+}
+
+.top h1 {
+  margin-top: 0;
+  font-size: 122px;
+  color: #eb4076;
+  text-shadow: -1px -1px #7b44f6;
+}
+
+.top button {
+  border: 1px solid white;
+  color: #7b44f6;
+  padding: 20px;
+  border-radius: 4px;
+  font-size: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  text-shadow: -1px -1px white;
+  animation-delay: 1.4s;
+}
+
+.trippy h2 {
+  font-size: 42px;
+  margin-bottom: 60px;
+}
