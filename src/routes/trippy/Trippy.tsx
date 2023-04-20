@@ -6,9 +6,11 @@ import avatarLoveSrc from "../../assets/avatar/avatar-love-dogs.png"
 import avatarLaughSrc from "../../assets/avatar/avatar-laugh.png"
 import avatarBurnSrc from "../../assets/avatar/avatar-burning-eyes.jpeg"
 import avatarOmgSrc from "../../assets/avatar/avatar-omg.png"
+import whatsappSrc from "../../assets/whatsapp-96.png"
 import Card from "../../components/card/Card"
 import "./Trippy.css"
 import { Parallax } from "react-scroll-parallax"
+import Checkbox from "../../components/checkbox/Checkbox"
 
 export default function Trippy() {
   return (
@@ -17,9 +19,7 @@ export default function Trippy() {
       <div className="trippy">
         <section className="top" id="trippy-bg">
           <article>
-            <small className="drop-in">
-              Consciousness Expansion Sessions & Performances
-            </small>
+            <small className="drop-in">Consciousness Expansion Sessions</small>
             <h1 className="drop-in two">Transcend fears into superpowers</h1>
             {/* <div className="cta">
               <div className="text">Ready to explore higher dimensions?</div>
@@ -83,7 +83,7 @@ export default function Trippy() {
                 <div className="img-container">
                   <img src={avatarLaughSrc} alt="Laugh" />
                 </div>
-                <span class="benefit-text">Burst out laughing</span>
+                <span class="benefit-text">Laugh more</span>
               </div>
               <div className="benefit">
                 <div className="img-container">
@@ -156,6 +156,46 @@ export default function Trippy() {
             imgSrc={tinaMartiniSrc}
             text="for the first in 6 months I was able to sleep through the night"
           />
+        </section>
+
+        <section className="session">
+          <article>
+            <h2>
+              Beyond a consciousness quantom jump, which of the following would
+              you like to address?
+            </h2>
+
+            <form className="checkbox-form">
+              <Checkbox>Allergy</Checkbox>
+              <Checkbox>Anxiety / panic attacks</Checkbox>
+              <Checkbox>Depression</Checkbox>
+              <Checkbox>Sleep</Checkbox>
+              <Checkbox>Money</Checkbox>
+              <Checkbox>Peak performance & skills</Checkbox>
+              <Checkbox>Self talk & inner voice</Checkbox>
+              <Checkbox>Trauma</Checkbox>
+              <Checkbox>Physical / chronic pain</Checkbox>
+              <Checkbox>Habits / addictions</Checkbox>
+              <Checkbox>Grief / loss / breakup</Checkbox>
+              <Checkbox>Anger</Checkbox>
+              <Checkbox>Fears & phobias</Checkbox>
+              <Checkbox>None of the above</Checkbox>
+            </form>
+
+            {/* <button className="whatsapp-btn">
+              <img src={whatsappSrc} alt="whatsapp" />
+              Let's talk!
+            </button> */}
+            <a
+              className="whatsapp-btn gradient-bg"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              href="https://wa.me/34657409663?text=Hi%20Shining%20I'd%20like%20to%20talk%20to%20you%20about%20a%20consciousness%20expanding%20session"
+            >
+              <img src={whatsappSrc} alt="whatsapp" />
+              Let's Talk!
+            </a>
+          </article>
         </section>
       </div>
     </>
