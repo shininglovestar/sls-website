@@ -13,6 +13,11 @@ import { Parallax } from "react-scroll-parallax"
 import Checkbox from "../../components/checkbox/Checkbox"
 
 export default function Trippy() {
+  const handleScrollToBegin = () => {
+    document.querySelector("#begin")!.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
   return (
     <>
       <Background />
@@ -21,11 +26,9 @@ export default function Trippy() {
           <article>
             <small className="drop-in">Consciousness Expansion Sessions</small>
             <h1 className="drop-in two">Transcend fears into superpowers</h1>
-            {/* <div className="cta">
-              <div className="text">Ready to explore higher dimensions?</div>
-              <button>Let's Begin</button>
-            </div> */}
-            <button className="grow-in">🛸 Elevate My Soul 🛸</button>
+            <button className="grow-in" onClick={handleScrollToBegin}>
+              🛸 Let's begin! 🛸
+            </button>
           </article>
         </section>
 
@@ -104,8 +107,8 @@ export default function Trippy() {
 
         <section className="middle-cta gradient-bg">
           <div className="cta">
-            <div className="text">Ready to explore higher dimensions?</div>
-            <button>Let's Begin</button>
+            <div className="text">Ready to ascend?</div>
+            <button onClick={handleScrollToBegin}>Let's Begin</button>
           </div>
         </section>
 
@@ -158,7 +161,7 @@ export default function Trippy() {
           />
         </section>
 
-        <section className="session">
+        <section className="session" id="begin">
           <article>
             <h2>
               Beyond a consciousness quantom jump, which of the following would
@@ -190,7 +193,7 @@ export default function Trippy() {
               className="whatsapp-btn gradient-bg"
               target="_blank"
               rel="noopener noreferrer nofollow"
-              href="https://wa.me/34657409663?text=Hi%20Shining%20I'd%20like%20to%20talk%20to%20you%20about%20a%20consciousness%20expanding%20session"
+              href="https://wa.me/34657409663?text=Hi%20Shining%20I'd%20like%20to%20talk%20to%20you%20about%20a%20consciousness%expansion%20session"
             >
               <img src={whatsappSrc} alt="whatsapp" />
               Let's Talk!

@@ -74,12 +74,13 @@
 
 .top button {
   border: 1px solid white;
-  color: #7b44f6;
+  color: white;
+  /* color: #7b44f6; */
   padding: 20px;
   border-radius: 4px;
   font-size: 40px;
-  background: rgba(0, 0, 0, 0.5);
-  text-shadow: -1px -1px white;
+  /* background: rgba(0, 0, 0, 0.5); */
+  /* text-shadow: -1px -1px white; */
   animation-delay: 1.4s;
 }
 
