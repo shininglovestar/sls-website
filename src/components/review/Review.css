@@ -1,0 +1,15 @@
+.review {
+  text-align: center;
+}
+
+.review img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 40px;
+}
+
+.review p {
+  font-size: 22px;
+}
