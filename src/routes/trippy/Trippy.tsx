@@ -54,7 +54,7 @@ export default function Trippy() {
       // },
       out: {
         style: {
-          opacity: (p) => 1 - p * 3,
+          opacity: (p: number) => 1 - p * 3,
         },
       },
     } as Animation)
@@ -158,13 +158,52 @@ export default function Trippy() {
               </span>
             </div>
           </ScrollPage>
+
           <ScrollPage>
-            <Animator animation={batch(FadeIn(), Sticky())}>
+            <Animator animation={batch(Fade(), Sticky())}>
               <p style={{ fontSize: 80, textAlign: "center" }}>
                 I've been mentoring groups & individuals for some odd 13 years
                 now
               </p>
               <br />
+            </Animator>
+          </ScrollPage>
+
+          <ScrollPage>
+            <Animator animation={batch(Fade(), Sticky())}>
+              <p style={{ fontSize: 80, textAlign: "center" }}>
+                But today I'm especially excited...
+              </p>
+            </Animator>
+          </ScrollPage>
+
+          <ScrollPage>
+            <div
+              style={{
+                background: "white",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                height: "100%",
+                fontSize: 80,
+                maxWidth: 600,
+                margin: "0 auto",
+              }}
+            >
+              Today I'm utterly delighted because...
+            </div>
+          </ScrollPage>
+
+          <ScrollPage>
+            <Animator animation={batch(Sticky(), Fade(), ZoomIn())}>
+              <span style={{ fontSize: 60 }}>I've finally met YOU!!</span>
+            </Animator>
+          </ScrollPage>
+
+          <ScrollPage>
+            <Animator animation={batch(Fade(), Sticky())}>
+              <p style={{ fontSize: 80, textAlign: "center" }}>And</p>
             </Animator>
           </ScrollPage>
 
