@@ -12,6 +12,8 @@ import {
   StickyIn,
   StickyOut,
   ZoomIn,
+  ZoomOut,
+  Zoom,
   Animator,
   Animation,
 } from "react-scroll-motion"
@@ -32,6 +34,9 @@ import Review from "../../components/review/Review"
 import natalieJohnsonSrc from "../../assets/reviewers/Natalie-Johnson.jpg"
 import tinaMariniSrc from "../../assets/reviewers/Tina-Marini.jpg"
 import natalieMariaSrc from "../../assets/reviewers/Natalie-Maria.jpg"
+import shaharEynavSrc from "../../assets/reviewers/Shahar-Eynav.jpg"
+import annaCarlaSrc from "../../assets/reviewers/Anna-Carla-Searing.jpg"
+import amyCabbageSrc from "../../assets/reviewers/Amy-Cabbage.jpg"
 import shiningSrc from "../../assets/shining.jpeg"
 
 export default function Trippy() {
@@ -45,7 +50,7 @@ export default function Trippy() {
   const FadeUp = batch(Fade(), Sticky())
 
   // Make custom animation
-  const CustomFade = () =>
+  const CustomFade = (coefficient = 1) =>
     ({
       // in: {
       //   style: {
@@ -54,20 +59,33 @@ export default function Trippy() {
       // },
       out: {
         style: {
-          opacity: (p: number) => 1 - p * 3,
+          opacity: (p: number) => 1 - p * 3 * coefficient,
         },
       },
     } as Animation)
 
+  const GrowIn = () =>
+    ({
+      in: {
+        style: {
+          transform: (p: number) => `scale(${p})`,
+        },
+      },
+      // out: {
+      //   style: {
+      //     opacity: (p: number) => 1 - p * 3,
+      //   },
+      // },
+    } as Animation)
+
   return (
     <>
-      <Background />
-
-      <div className="trippy">
+      <div className="trippy-pg">
         <ScrollContainer>
           <ScrollPage>
             <Animator animation={FadeUp}>
-              <section className="top" id="trippy-bg">
+              <section className="trippy" id="top-trippy-bg">
+                <Background target="top-trippy-bg" />
                 <article>
                   <small className="drop-in">
                     Consciousness Expansion Mentorship
@@ -203,96 +221,221 @@ export default function Trippy() {
 
           <ScrollPage>
             <Animator animation={batch(Fade(), Sticky())}>
-              <p style={{ fontSize: 80, textAlign: "center" }}>And</p>
+              <p style={{ fontSize: 80, textAlign: "center" }}>
+                And you my friend...
+              </p>
             </Animator>
           </ScrollPage>
 
-          {/* <section className="session">
-            <h2>Anatomy of a Session</h2>
-            <article className="presession">
-              <h4>Presession</h4>
-              <ul>
-                <li>
-                  🎥 Send a 5 minute video of your deepest fears & desires
-                </li>
-                <li>📱 5 Minute Compatibility vid-call</li>
-                <li>💸 Secure online payment</li>
-              </ul>
-            </article>
+          <ScrollPage>
+            <div
+              style={{
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                background: "white",
+                maxWidth: 600,
+                margin: "0 auto",
+              }}
+            >
+              <Review
+                title="Like Shahar has already experienced"
+                shortTxt="Brilliant! Had a great experience with Shining. Never thought that only 2 sessions can change your whole world perspective. I highly recommend sessions with Shining. It is such a powerful methodology. Shining is easy going, attentive but yet very practical  you won't regret it!"
+                reviewer="Shahar Eynav"
+                imgSrc={shaharEynavSrc}
+              />
+            </div>
+          </ScrollPage>
 
-            <article className="actual-session">
-              <h4>Session</h4>
-              <ul>
-                <li>🤝 Greetings & Settings Parameters</li>
-                <li>🛸 Ascending to a higher dimension together</li>
-                <li>🧝‍♀️ Program your being & outcomes on higher planes</li>
-                <li>🌎 Descending back to our shared 3 dimensional reality</li>
-                <li>🧚‍♀️ Integration</li>
-              </ul>
-            </article>
+          <ScrollPage>
+            <div
+              style={{
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                background: "white",
+                maxWidth: 600,
+                margin: "0 auto",
+              }}
+            >
+              <Review
+                title="Like Anna already tasted"
+                shortTxt="Shining's techniques have really changed my perspective on events that have occurred in my life allowing me to feel so much more confident and excited about the future. Amazing! 👏🏻💖✨"
+                reviewer="Anna Carla Searing"
+                imgSrc={annaCarlaSrc}
+              />
+            </div>
+          </ScrollPage>
 
-            <article className="post-session">
-              <h4>Postsession followup</h4>
-              <ul>
-                <li>😌 Solidifying your higher self</li>
-                <li>🤔 Where do we go from here</li>
-              </ul>
-            </article>
-          </section>
+          <ScrollPage>
+            <div
+              style={{
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                background: "white",
+                maxWidth: 600,
+                margin: "0 auto",
+              }}
+            >
+              <Review
+                title="Like Amy already realized..."
+                shortTxt="How I used to try and deal/process things seems ludicrous and SLOW now. It’s the first time I truly believe things will actually be different - I've always had hope...but now I've tasted it"
+                reviewer="Amy Cabbage"
+                imgSrc={amyCabbageSrc}
+              />
+            </div>
+          </ScrollPage>
 
-          <section className="reviews gradient-bg">
-            <Card
-              title="Tina Martini"
-              imgSrc={tinaMartiniSrc}
-              text="for the first in 6 months I was able to sleep through the night"
-            />
-            <Card
-              title="Tina Martini"
-              imgSrc={tinaMartiniSrc}
-              text="for the first in 6 months I was able to sleep through the night"
-            />
-            <Card
-              title="Tina Martini"
-              imgSrc={tinaMartiniSrc}
-              text="for the first in 6 months I was able to sleep through the night"
-            />
-          </section>
+          <ScrollPage>
+            <Animator animation={batch(Fade(), Sticky())}>
+              <p style={{ fontSize: 80, textAlign: "center" }}>
+                You too are part of the divine 🧝‍♀️
+              </p>
+            </Animator>
+          </ScrollPage>
 
-          <section className="session" id="begin">
-            <article>
-              <h2>
-                Beyond a consciousness quantom jump, which of the following
-                would you like to address?
-              </h2>
+          <ScrollPage>
+            <Animator animation={batch(Sticky(), Fade(), ZoomIn(), MoveOut())}>
+              <p style={{ fontSize: 60, textAlign: "center" }}>
+                Experiencing itself subjectively ✨
+              </p>
+            </Animator>
+          </ScrollPage>
 
-              <form className="checkbox-form">
-                <Checkbox>Allergy</Checkbox>
-                <Checkbox>Anxiety / panic attacks</Checkbox>
-                <Checkbox>Depression</Checkbox>
-                <Checkbox>Sleep</Checkbox>
-                <Checkbox>Money</Checkbox>
-                <Checkbox>Peak performance & skills</Checkbox>
-                <Checkbox>Self talk & inner voice</Checkbox>
-                <Checkbox>Trauma</Checkbox>
-                <Checkbox>Physical / chronic pain</Checkbox>
-                <Checkbox>Habits / addictions</Checkbox>
-                <Checkbox>Grief / loss / breakup</Checkbox>
-                <Checkbox>Anger</Checkbox>
-                <Checkbox>Fears & phobias</Checkbox>
-                <Checkbox>None of the above</Checkbox>
-              </form>
+          <ScrollPage>
+            <div
+              style={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                background: "white",
+                maxWidth: 600,
+                margin: "0 auto",
+              }}
+            >
+              <Animator animation={batch(FadeIn(), CustomFade(), Sticky())}>
+                <p style={{ fontSize: 80, textAlign: "center" }}>🐈</p>
+              </Animator>
+              <Animator animation={batch(FadeIn(), CustomFade())}>
+                <p style={{ fontSize: 80, textAlign: "center" }}>
+                  And I'm DYING from curiosity
+                </p>
+              </Animator>
+            </div>
+          </ScrollPage>
 
-              <a
-                className="whatsapp-btn gradient-bg"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                href="https://wa.me/34657409663?text=Hi%20Shining%20I'd%20like%20to%20talk%20to%20you%20about%20a%20consciousness%expansion%20session"
-              >
-                <img src={whatsappSrc} alt="whatsapp" />
-                Let's Talk!
-              </a>
-            </article>
-          </section> */}
+          <ScrollPage>
+            <Animator animation={batch(FadeIn(), CustomFade(), Sticky())}>
+              <p style={{ fontSize: 80, textAlign: "center" }}>🙀</p>
+            </Animator>
+            <Animator
+              animation={batch(
+                Sticky(),
+                Move(600, 600, -600, -600),
+                CustomFade(0.5)
+              )}
+            >
+              <p style={{ fontSize: 80 }}>To discover together</p>
+            </Animator>
+          </ScrollPage>
+
+          <ScrollPage>
+            <Animator animation={batch(FadeIn(), CustomFade(), Sticky())}>
+              <p style={{ fontSize: 80, textAlign: "center" }}>💝</p>
+            </Animator>
+            <Animator
+              animation={batch(
+                Sticky(),
+                CustomFade(0.5),
+                Move(-600, 600, 600, -600)
+              )}
+            >
+              <p style={{ fontSize: 80, textAlign: "center" }}>
+                What hidden treasures await us
+              </p>
+            </Animator>
+          </ScrollPage>
+
+          <ScrollPage>
+            <Animator animation={batch(Fade(), Sticky())}>
+              <p style={{ fontSize: 80, textAlign: "center" }}>🫣</p>
+              <p style={{ fontSize: 80, textAlign: "center" }}>
+                In the deepest places you were too afraid to look
+              </p>
+            </Animator>
+          </ScrollPage>
+
+          <ScrollPage>
+            <Animator animation={batch(Fade(), Sticky())}>
+              <p style={{ fontSize: 80, textAlign: "center" }}>🦄</p>
+              <p style={{ fontSize: 80, textAlign: "center" }}>
+                Until this very magical moment
+              </p>
+            </Animator>
+          </ScrollPage>
+
+          <ScrollPage>
+            <div
+              style={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                background: "white",
+                maxWidth: 600,
+                margin: "0 auto",
+              }}
+            >
+              <Animator animation={CustomFade(2)}>
+                <p style={{ fontSize: 80, textAlign: "center" }}>
+                  Where we both decided to take our first step together
+                </p>
+                <p style={{ fontSize: 80, textAlign: "center" }}>👣</p>
+              </Animator>
+            </div>
+          </ScrollPage>
+
+          <ScrollPage>
+            <Animator animation={batch(Fade(), Sticky())}>
+              <p style={{ fontSize: 80, textAlign: "center" }}>
+                And dive into the infinite realm of possibilities
+              </p>
+              <p style={{ fontSize: 80, textAlign: "center" }}>🤯</p>
+            </Animator>
+          </ScrollPage>
+
+          <ScrollPage>
+            <section className="trippy" id="middle-trippy-bg">
+              <Background target="middle-trippy-bg" />
+              <article>
+                <small className="drop-in">
+                  Dare to dream like the child we all are inside
+                </small>
+                <h2 className="drop-in two">
+                  Take action. Co-create. Manifest. Expand. Play.
+                </h2>
+                <a
+                  className="grow-in"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  href="https://api.whatsapp.com/send/?phone=34657409663&text=Hi%20Shining!%20%3A)%20I've%20went%20through%20the%20site%20and%20I'm%20ready%20to%20dwell%20together%20through%20higher%20dimensions%20of%20consciousness%20%3AO"
+                >
+                  <img src={whatsappSrc} alt="whatsapp" />
+                  <span>Go for it!</span>
+                </a>
+                <span className="trippy-bottom">
+                  (or scroll down for more sharings)
+                </span>
+              </article>
+            </section>
+          </ScrollPage>
         </ScrollContainer>
       </div>
     </>

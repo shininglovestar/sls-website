@@ -34,7 +34,7 @@
   }
 }
 
-.top {
+.trippy {
   background-color: black;
   position: relative;
   color: white;
@@ -43,12 +43,12 @@
   /* height: 100vh; */
 }
 
-.top canvas {
+.trippy canvas {
   position: absolute;
   top: 0;
 }
 
-.top article {
+.trippy article {
   position: relative;
   z-index: 10;
   text-align: center;
@@ -60,33 +60,41 @@
   flex-direction: column;
 }
 
-.top small {
+.trippy small {
   font-size: 22px;
   text-shadow: -1px -1px black;
 }
 
-.top h1 {
+.trippy-pg h2 {
+  font-size: 42px;
+  margin-bottom: 60px;
+}
+
+.trippy h1,
+.trippy h2 {
   margin-top: 0;
   font-size: 122px;
   color: #eb4076;
   text-shadow: -1px -1px #7b44f6;
 }
 
-.top button {
+.trippy a {
   border: 1px solid white;
   color: white;
-  /* color: #7b44f6; */
   padding: 20px;
   border-radius: 4px;
   font-size: 40px;
-  /* background: rgba(0, 0, 0, 0.5); */
-  /* text-shadow: -1px -1px white; */
   animation-delay: 1.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
-.trippy h2 {
-  font-size: 42px;
-  margin-bottom: 60px;
+.trippy-bottom {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
 }
 
 .whatsapp-btn {

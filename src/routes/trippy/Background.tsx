@@ -3,7 +3,7 @@
 import * as THREE from "three"
 import { useEffect } from "preact/hooks"
 
-export default function Background() {
+export default function Background({ target }) {
   useEffect(() => {
     class TrailStop {
       static options = {
@@ -411,12 +411,19 @@ export default function Background() {
 
     const renderer = new THREE.WebGLRenderer({ antialias: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
+
     window.addEventListener("resize", (e) => {
       renderer.setSize(window.innerWidth, window.innerHeight)
       camera.aspect = window.innerWidth / window.innerHeight
       camera.updateProjectionMatrix()
     })
-    document.querySelector("#trippy-bg").appendChild(renderer.domElement)
+
+    const targelElement = document.getElementById(target)
+
+    if (targelElement) {
+      targelElement.appendChild(renderer.domElement)
+    }
+
     const cameraContainer = new THREE.Object3D()
     cameraContainer.attach(camera)
     camera.lookAt(0, 0, 10)
@@ -432,4 +439,8 @@ export default function Background() {
   }, [])
 
   return null
+}
+
+interface IProps {
+  target: string
 }
