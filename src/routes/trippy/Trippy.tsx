@@ -48,7 +48,7 @@ export default function Trippy() {
                 <Background target="top-trippy-bg" />
                 <article>
                   <small className="drop-in">
-                    ACTIONABLE Consciousness Expansion Mentorship
+                    ACTIONABLE Consciousness Acceleration Mentorship
                   </small>
                   <h1 className="trippy-title drop-in two">
                     Transcend fears into superpowers
