@@ -40,7 +40,6 @@
   color: white;
   overflow: hidden;
   width: 100vw;
-  /* height: 100vh; */
 }
 
 .trippy canvas {
@@ -70,8 +69,7 @@
   margin-bottom: 60px;
 }
 
-.trippy h1,
-.trippy h2 {
+.trippy-title {
   margin-top: 0;
   font-size: 122px;
   color: #eb4076;
@@ -145,4 +143,23 @@
   object-fit: cover;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.container {
+  max-width: 600px;
+}
+
+@media (max-width: 600px) {
+  .scroll-page {
+    width: 100%;
+  }
+
+  .scroll-page:not(.scroll-page-trippy) > div {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .trippy h1 {
+    font-size: 58px;
+  }
 }
